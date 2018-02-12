@@ -15,6 +15,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public MainFrame() {
         initComponents();
+        // Probably manually add up the functionality here? as an container initializer, maybe based on login?
     }
 
     /**
@@ -70,6 +71,11 @@ public class MainFrame extends javax.swing.JFrame {
         mnuFrames.add(mnuFrame1);
 
         mnuFrame2.setText("Frame2");
+        mnuFrame2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuFrame2ActionPerformed(evt);
+            }
+        });
         mnuFrames.add(mnuFrame2);
 
         jMenuBar1.add(mnuFrames);
@@ -97,10 +103,18 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void mnuFrame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFrame1ActionPerformed
         // TODO add your handling code here:
+        //might have problem in adding a lot of same JInternalFrame after repeating clicks
         Frames.Frame1 f = new Frames.Frame1();
         desktop.add(f);
         f.setVisible(true);
     }//GEN-LAST:event_mnuFrame1ActionPerformed
+
+    private void mnuFrame2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFrame2ActionPerformed
+        // TODO add your handling code here:
+        Frames.Frame2 f = new Frames.Frame2();
+        desktop.add(f);
+        f.setVisible(true);
+    }//GEN-LAST:event_mnuFrame2ActionPerformed
 
     /**
      * @param args the command line arguments

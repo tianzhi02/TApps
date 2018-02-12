@@ -5,18 +5,41 @@
  */
 package Frames;
 
+import Frames.Panels.Panel1;
+import Frames.Panels.Panel2;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+
 /**
  *
  * @author Tianzhi
  */
 public class Frame1 extends javax.swing.JInternalFrame {
-
+    GridBagLayout layout = new GridBagLayout();
+    Panel1 p1;
+    Panel2 p2;
+    
     /**
      * Creates new form Frame1
      */
     public Frame1() {
         initComponents();
         this.setClosable(true); //Enable close button of this UI
+        
+        p1 = new Panel1();
+        p2 = new Panel2();
+        //DynamicPanel serves as the container of all panels
+        DynamicPanel.setLayout(layout);
+        GridBagConstraints c = new GridBagConstraints();
+        c.gridx = 0;
+        c.gridy = 0;
+        DynamicPanel.add(p1,c);
+        c.gridx = 0;
+        c.gridy = 0;
+        DynamicPanel.add(p2,c);
+        //initialise one of the panel as visible
+        p1.setVisible(true);
+        p2.setVisible(false);
     }
 
     /**
@@ -28,23 +51,87 @@ public class Frame1 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        PanelButtons = new javax.swing.JPanel();
+        btnPanel1 = new javax.swing.JButton();
+        btnPanel2 = new javax.swing.JButton();
+        DynamicPanel = new javax.swing.JPanel();
+
         setTitle("Frame 1");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+        PanelButtons.setBackground(new java.awt.Color(0, 255, 204));
+
+        btnPanel1.setText("Panel 1");
+        btnPanel1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPanel1ActionPerformed(evt);
+            }
+        });
+
+        btnPanel2.setText("Panel 2");
+        btnPanel2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPanel2ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PanelButtonsLayout = new javax.swing.GroupLayout(PanelButtons);
+        PanelButtons.setLayout(PanelButtonsLayout);
+        PanelButtonsLayout.setHorizontalGroup(
+            PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPanel1)
+                    .addComponent(btnPanel2))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+        PanelButtonsLayout.setVerticalGroup(
+            PanelButtonsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelButtonsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnPanel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnPanel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getContentPane().add(PanelButtons, java.awt.BorderLayout.LINE_START);
+
+        DynamicPanel.setBackground(new java.awt.Color(0, 204, 204));
+
+        javax.swing.GroupLayout DynamicPanelLayout = new javax.swing.GroupLayout(DynamicPanel);
+        DynamicPanel.setLayout(DynamicPanelLayout);
+        DynamicPanelLayout.setHorizontalGroup(
+            DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 307, Short.MAX_VALUE)
+        );
+        DynamicPanelLayout.setVerticalGroup(
+            DynamicPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 278, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(DynamicPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnPanel1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanel1ActionPerformed
+        // TODO add your handling code here:
+        p1.setVisible(true);
+        p2.setVisible(false);
+    }//GEN-LAST:event_btnPanel1ActionPerformed
+
+    private void btnPanel2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPanel2ActionPerformed
+        // TODO add your handling code here:
+        p1.setVisible(false);
+        p2.setVisible(true);
+    }//GEN-LAST:event_btnPanel2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel DynamicPanel;
+    private javax.swing.JPanel PanelButtons;
+    private javax.swing.JButton btnPanel1;
+    private javax.swing.JButton btnPanel2;
     // End of variables declaration//GEN-END:variables
 }
