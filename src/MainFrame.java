@@ -26,11 +26,26 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        desktop = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         mnuFile = new javax.swing.JMenu();
         mnuExit = new javax.swing.JMenuItem();
+        mnuFrames = new javax.swing.JMenu();
+        mnuFrame1 = new javax.swing.JMenuItem();
+        mnuFrame2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout desktopLayout = new javax.swing.GroupLayout(desktop);
+        desktop.setLayout(desktopLayout);
+        desktopLayout.setHorizontalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        desktopLayout.setVerticalGroup(
+            desktopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 274, Short.MAX_VALUE)
+        );
 
         mnuFile.setText("File");
 
@@ -44,17 +59,32 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar1.add(mnuFile);
 
+        mnuFrames.setText("Frames");
+
+        mnuFrame1.setText("Frame1");
+        mnuFrame1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuFrame1ActionPerformed(evt);
+            }
+        });
+        mnuFrames.add(mnuFrame1);
+
+        mnuFrame2.setText("Frame2");
+        mnuFrames.add(mnuFrame2);
+
+        jMenuBar1.add(mnuFrames);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(desktop)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addComponent(desktop)
         );
 
         pack();
@@ -64,6 +94,13 @@ public class MainFrame extends javax.swing.JFrame {
         // TODO add your handling code here
         System.exit(0);
     }//GEN-LAST:event_mnuExitActionPerformed
+
+    private void mnuFrame1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuFrame1ActionPerformed
+        // TODO add your handling code here:
+        Frames.Frame1 f = new Frames.Frame1();
+        desktop.add(f);
+        f.setVisible(true);
+    }//GEN-LAST:event_mnuFrame1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -101,8 +138,12 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDesktopPane desktop;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem mnuExit;
     private javax.swing.JMenu mnuFile;
+    private javax.swing.JMenuItem mnuFrame1;
+    private javax.swing.JMenuItem mnuFrame2;
+    private javax.swing.JMenu mnuFrames;
     // End of variables declaration//GEN-END:variables
 }
