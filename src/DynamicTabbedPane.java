@@ -1,7 +1,6 @@
 
 import Panels.Panel1;
 import Panels.Panel2;
-import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import javax.swing.JPanel;
@@ -17,12 +16,12 @@ import javax.swing.JTabbedPane;
  *
  * @author Tianzhi
  */
-public class MainFrame3 extends javax.swing.JFrame {
+public class DynamicTabbedPane extends javax.swing.JFrame {
     GridBagLayout layout = new GridBagLayout();
     /**
-     * Creates new form MainFrame3
+     * Creates new form DynamicTabbedPane
      */
-    public MainFrame3() {
+    public DynamicTabbedPane() {
         initComponents();
         
         //Initialise the custom panels
@@ -32,6 +31,8 @@ public class MainFrame3 extends javax.swing.JFrame {
         GridBagConstraints c = new GridBagConstraints();
         c.gridx = 0;
         c.gridy = 0;
+        
+        
         
         //Add custom panels into DynamicTabbedPane
         container(DynamicTabbedPane, p1, "Panel 1", c);
@@ -57,12 +58,18 @@ public class MainFrame3 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
+    
+    /**
+     * This method is called from within the constructor to use as a container for 
+     * gathering different panels into one GUI.
+     */
     private void container(JTabbedPane tabbedpane, JPanel panel, String title, GridBagConstraints c){
         JPanel thispanel;
         thispanel = new JPanel();
         tabbedpane.addTab(title, thispanel);
         thispanel.add(panel,c);
     }
+    
     /**
      * @param args the command line arguments
      */
@@ -80,20 +87,20 @@ public class MainFrame3 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DynamicTabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DynamicTabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DynamicTabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainFrame3.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DynamicTabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame3().setVisible(true);
+                new DynamicTabbedPane().setVisible(true);
             }
         });
     }
