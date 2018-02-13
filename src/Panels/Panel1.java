@@ -3,18 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Frames.Panels;
+package Panels;
 
 /**
  *
  * @author Tianzhi
  */
-public class Panel2 extends javax.swing.JPanel {
+public class Panel1 extends javax.swing.JPanel {
 
     /**
-     * Creates new form Panel2
+     * Creates new form Panel1
      */
-    public Panel2() {
+    public Panel1() {
         initComponents();
     }
 
@@ -31,23 +31,23 @@ public class Panel2 extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("This is Panel 2");
+        jLabel1.setText("This is Panel 1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
+                .addGap(56, 56, 56)
                 .addComponent(jLabel1)
-                .addContainerGap(242, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel1)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(241, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

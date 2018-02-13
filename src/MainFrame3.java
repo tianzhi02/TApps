@@ -1,6 +1,6 @@
 
-import Frames.Panels.Panel1;
-import Frames.Panels.Panel2;
+import Panels.Panel1;
+import Panels.Panel2;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
