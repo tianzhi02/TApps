@@ -6,6 +6,10 @@ import java.awt.GridBagLayout;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+//For logging
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,6 +22,7 @@ import javax.swing.JTabbedPane;
  */
 public class DynamicTabbedPane extends javax.swing.JFrame {
     GridBagLayout layout = new GridBagLayout();
+    private static final Logger logger1 = LogManager.getLogger();
     /**
      * Creates new form DynamicTabbedPane
      */
@@ -32,11 +37,12 @@ public class DynamicTabbedPane extends javax.swing.JFrame {
         c.gridx = 0;
         c.gridy = 0;
         
-        
-        
         //Add custom panels into DynamicTabbedPane
         container(DynamicTabbedPane, p1, "Panel 1", c);
         container(DynamicTabbedPane, p2, "Panel 2", c);
+
+        //Log completed contructor
+        logger1.error("DynamicTabbedPane started");
     }
 
     /**
@@ -68,6 +74,10 @@ public class DynamicTabbedPane extends javax.swing.JFrame {
         thispanel = new JPanel();
         tabbedpane.addTab(title, thispanel);
         thispanel.add(panel,c);
+        
+        //Log created tab
+        logger1.info("Tab created : " + title);
+        
     }
     
     /**
@@ -96,7 +106,7 @@ public class DynamicTabbedPane extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(DynamicTabbedPane.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
